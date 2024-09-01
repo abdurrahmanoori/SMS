@@ -2,16 +2,16 @@
 
 namespace Entities.Data
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option):base(option)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option) : base(option)
         {
-           
-          
+
+
         }
 
 
 
-        public DbSet<Survey> Surveys { get; set;}
+        public DbSet<Survey> Surveys { get; set; }
     }
 }
