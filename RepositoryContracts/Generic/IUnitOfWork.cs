@@ -9,6 +9,7 @@ namespace RepositoryContracts.Generic
     public interface IUnitOfWork
     {
         //IProvinceRepository ProvinceRepository { get; }
+        ISurveyRepository SurveyRepository { get; }
         Task SaveChanges(CancellationToken cancellationToken);
 
     }
