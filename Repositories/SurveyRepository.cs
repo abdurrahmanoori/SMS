@@ -1,7 +1,9 @@
-﻿using Entities;
+﻿
+
 using Entities.Data;
 using Repositories.Generic;
 using RepositoryContracts;
+using SMS.Entities;
 
 namespace Repositories
 {

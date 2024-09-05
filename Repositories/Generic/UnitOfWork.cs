@@ -1,4 +1,5 @@
-﻿using Entities.Data;
+﻿
+using Entities.Data;
 using RepositoryContracts;
 using RepositoryContracts.Generic;
 using System;
