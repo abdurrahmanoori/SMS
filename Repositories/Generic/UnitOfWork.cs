@@ -21,10 +21,12 @@ namespace Repositories.Generic
         {
             _db = db;
             SurveyRepository = new SurveyRepository(db);
+            LanguageRepository = new LanguageRepository(db);
             // ProvinceRepository = new ProvinceRepository(db);
         }
 
         public ISurveyRepository SurveyRepository {get; private set;}
+        public ILanguageRepository LanguageRepository {get; private set;}
 
         public async Task SaveChanges(CancellationToken cancellationToken)
         {

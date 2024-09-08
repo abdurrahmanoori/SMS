@@ -1,6 +1,4 @@
-﻿
-
-using Entities.Data;
+﻿using Entities.Data;
 using Repositories.Generic;
 using RepositoryContracts;
 using SMS.Entities;
