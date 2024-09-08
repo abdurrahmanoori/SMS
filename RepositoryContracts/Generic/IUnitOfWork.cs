@@ -11,6 +11,8 @@ namespace RepositoryContracts.Generic
         //IProvinceRepository ProvinceRepository { get; }
         ISurveyRepository SurveyRepository { get; }
         ILanguageRepository LanguageRepository { get;}
+        ISurveyTranslationRepository SurveyTranslationRepository { get; }
+        
         Task SaveChanges(CancellationToken cancellationToken);
 
     }

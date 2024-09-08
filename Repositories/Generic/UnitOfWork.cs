@@ -1,5 +1,4 @@
-﻿
-using Entities.Data;
+﻿using Entities.Data;
 using RepositoryContracts;
 using RepositoryContracts.Generic;
 using System;
@@ -22,11 +21,14 @@ namespace Repositories.Generic
             _db = db;
             SurveyRepository = new SurveyRepository(db);
             LanguageRepository = new LanguageRepository(db);
+            SurveyTranslationRepository = new SurveyTranslationRepository(db);
+
             // ProvinceRepository = new ProvinceRepository(db);
         }
 
         public ISurveyRepository SurveyRepository {get; private set;}
         public ILanguageRepository LanguageRepository {get; private set;}
+        public ISurveyTranslationRepository SurveyTranslationRepository { get; }
 
         public async Task SaveChanges(CancellationToken cancellationToken)
         {
