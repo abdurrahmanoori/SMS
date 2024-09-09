@@ -22,14 +22,32 @@ namespace Repositories.Generic
             SurveyRepository = new SurveyRepository(db);
             LanguageRepository = new LanguageRepository(db);
             SurveyTranslationRepository = new SurveyTranslationRepository(db);
+            AnswerOptionRepository = new AnswerOptionRepository(db);
+            AnswerOptionTranslationRepository = new AnswerOptionTranslationRepository(db);
+            QuestionRepository = new QuestionRepository(db);
+            QuestionTranslationRepository = new QuestionTranslationRepository(db);
+            RespondentRepository = new RespondentRepository(db);
+            SurveyInstanceRepository = new SurveyInstanceRepository(db);
+            SurveyInstanceQuestionRepository = new SurveyInstanceQuestionRepository(db);
+            SurveyResponseRepository = new SurveyResponseRepository(db);
+            SurveyResponseDetailRepository = new SurveyResponseDetailRepository(db);
 
             // ProvinceRepository = new ProvinceRepository(db);
         }
 
         public ISurveyRepository SurveyRepository {get; private set;}
         public ILanguageRepository LanguageRepository {get; private set;}
-        public ISurveyTranslationRepository SurveyTranslationRepository { get; }
-
+        public ISurveyTranslationRepository SurveyTranslationRepository { get; private set; }
+        public ISurveyInstanceQuestionRepository AnswerOptionRepository { get; private set; }
+        public IAnswerOptionTranslationRepository AnswerOptionTranslationRepository { get; private set; }
+        public IQuestionRepository QuestionRepository { get; private set; }
+        public IQuestionTranslationRepository QuestionTranslationRepository { get; private set; }
+        public IRespondentRepository RespondentRepository { get; private set; }
+        public ISurveyInstanceRepository SurveyInstanceRepository { get; private set; }
+        public ISurveyInstanceQuestionRepository SurveyInstanceQuestionRepository { get; private set; }
+        public ISurveyResponseRepository SurveyResponseRepository { get; private set; }
+        public ISurveyResponseDetailRepository SurveyResponseDetailRepository { get; private set; }
+       
         public async Task SaveChanges(CancellationToken cancellationToken)
         {
             await _db.SaveChangesAsync(cancellationToken);

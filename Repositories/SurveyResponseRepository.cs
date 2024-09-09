@@ -5,10 +5,10 @@ using SMS.Entities;
 
 namespace Repositories
 {
-    public class LanguageRepository : GenericRepository<Language>, ILanguageRepository
+    public class SurveyResponseRepository : GenericRepository<SurveyResponse>, ISurveyResponseRepository
     {
         private readonly ApplicationDbContext _dbContext;
-        public LanguageRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public SurveyResponseRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
