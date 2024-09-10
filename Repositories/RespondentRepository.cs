@@ -5,12 +5,12 @@ using SMS.Entities;
 
 namespace Repositories
 {
-    public class LanguageRepository : GenericRepository<Language>, ILanguageRepository
+    public class RespondentRepository : GenericRepository<Respondent>, IRespondentRepository
     {
         private readonly ApplicationDbContext _dbContext;
-        public LanguageRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public RespondentRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
+            _dbContext = dbContext; 
         }
     }
 }
