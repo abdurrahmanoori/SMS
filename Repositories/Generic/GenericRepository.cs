@@ -106,7 +106,8 @@ namespace Repositories.Generic
             var result = await query.FirstOrDefaultAsync();
             if (result == null)
             {
-                throw new ArgumentException($"No {typeof(T).Name}s found matching the filter. and this message comes form generic repository.");
+                return null;
+                //throw new ArgumentException($"No {typeof(T).Name}s found matching the filter. and this message comes form generic repository.");
             }
 
             return result;
