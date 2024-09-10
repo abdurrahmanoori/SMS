@@ -3,7 +3,7 @@ using SMS.Entities;
 
 namespace RepositoryContracts
 {
-    public interface ISurveyInstanceQuestionRepository : IGenericRepository<SurveyInstanceQuestion>
+    public interface IAnswerOptionRepository : IGenericRepository<AnswerOption>
     {
 
     }

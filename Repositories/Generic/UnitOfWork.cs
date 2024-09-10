@@ -38,13 +38,13 @@ namespace Repositories.Generic
         public ISurveyRepository SurveyRepository {get; private set;}
         public ILanguageRepository LanguageRepository {get; private set;}
         public ISurveyTranslationRepository SurveyTranslationRepository { get; private set; }
-        public ISurveyInstanceQuestionRepository AnswerOptionRepository { get; private set; }
+        public IAnswerOptionRepository AnswerOptionRepository {get; private set;}
+        public ISurveyInstanceQuestionRepository SurveyInstanceQuestionRepository { get; private set; }
         public IAnswerOptionTranslationRepository AnswerOptionTranslationRepository { get; private set; }
         public IQuestionRepository QuestionRepository { get; private set; }
         public IQuestionTranslationRepository QuestionTranslationRepository { get; private set; }
         public IRespondentRepository RespondentRepository { get; private set; }
         public ISurveyInstanceRepository SurveyInstanceRepository { get; private set; }
-        public ISurveyInstanceQuestionRepository SurveyInstanceQuestionRepository { get; private set; }
         public ISurveyResponseRepository SurveyResponseRepository { get; private set; }
         public ISurveyResponseDetailRepository SurveyResponseDetailRepository { get; private set; }
        
