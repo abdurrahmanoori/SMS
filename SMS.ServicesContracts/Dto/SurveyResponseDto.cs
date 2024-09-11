@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RepositoryContracts.DTOs
+namespace SMS.ServicesContracts.Dto
 {
     public class SurveyResponseDto
     {
@@ -15,19 +15,18 @@ namespace RepositoryContracts.DTOs
         public bool IsActive { get; set; }
     }
 
-
-
     public static class SurveyExtention
     {
-        public static SurveyResponseDto ToSurveResponseDto(this Survey survey)
+        public static SurveyResponseDto ToSurveyResponseDto(this Survey Survey)
         {
             return new SurveyResponseDto
             {
-                SurveyID  =survey.SurveyID,
-                SurveyDescription = survey.SurveyDescription,
-                CreatedDate = survey.CreatedDate,
-                IsActive = survey.IsActive
+                SurveyID = Survey.SurveyID,
+                SurveyDescription = Survey.SurveyDescription,
+                CreatedDate =Survey.CreatedDate,
+                IsActive = Survey.IsActive
             };
+
         }
     }
 }
