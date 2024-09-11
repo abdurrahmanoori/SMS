@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -22,6 +22,8 @@
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
     <ProjectReference Include="..\RepositoryContracts\RepositoryContracts.csproj" />
     <ProjectReference Include="..\SMS.Entities\SMS.Entities.csproj" />
+    <ProjectReference Include="..\SMS.ServicesContracts\SMS.ServicesContracts.csproj" />
+    <ProjectReference Include="..\SMS.Services\SMS.Services.csproj" />
   </ItemGroup>
 
 </Project>

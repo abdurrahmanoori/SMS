@@ -3,6 +3,8 @@ using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Generic;
 using RepositoryContracts.Generic;
+using SMS.Services;
+using SMS.ServicesContracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<ISurveyService, SurveyService>();
 //builder.Services.AddScoped<,>
 
 
