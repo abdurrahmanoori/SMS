@@ -15,9 +15,6 @@ namespace SMS.Entities
         public DateTime CreatedDate { get; set; }
         public string LanguageDescription { get; set; }
 
-        public LanguageResponseDto ToLanguageResponseDto()
-        {
-            throw new NotImplementedException();
-        }
+     
     }
 }
