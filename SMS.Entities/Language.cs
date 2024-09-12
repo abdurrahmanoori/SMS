@@ -11,5 +11,13 @@ namespace SMS.Entities
     {
         public int LanguageID { get; set; }
         public string LanguageCode { get; set; }  // e.g., "en", "fa", "ur"
+        public bool IsActive { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string LanguageDescription { get; set; }
+
+        public LanguageResponseDto ToLanguageResponseDto()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
