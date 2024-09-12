@@ -52,7 +52,7 @@ namespace SMS.Api.Controllers
         }
 
         [HttpPost("api/language/create")]
-        public async Task<IActionResult> Create(LanguageAddDto surveyAddDto)
+        public async Task<IActionResult> Create(LanguageAddDto languageAddDto)
         {
             if (ModelState.IsValid is not true)
             {
