@@ -15,8 +15,5 @@ namespace SMS.Entities
         public string Province { get; set; }  // Example: "Kabul", "Tehran", etc.
 
         public ICollection<SurveyResponse> SurveyResponses { get; set; }
-        public string RespondentDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
     }
 }

@@ -11,8 +11,5 @@
         public ICollection<QuestionTranslation> Translations { get; set; }
         public ICollection<SurveyInstanceQuestion> SurveyInstanceQuestions { get; set; }
         public ICollection<AnswerOption> AnswerOptions { get; set; }
-        public string QuestionDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
     }
 }

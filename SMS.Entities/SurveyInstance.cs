@@ -11,7 +11,6 @@
         public Survey Survey { get; set; }
         public ICollection<SurveyInstanceQuestion> SurveyInstanceQuestions { get; set; }
         public ICollection<SurveyResponse> SurveyResponses { get; set; }
-        public string SurveyInstanceDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
+
     }
 }

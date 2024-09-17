@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SMS.Entities
+﻿namespace SMS.Entities
 {
     public class AnswerOption
     {
@@ -12,8 +6,6 @@ namespace SMS.Entities
         public int QuestionID { get; set; }
         public ICollection<AnswerOptionTranslation> Translations { get; set; }
         public Question Question { get; set; }
-        public string AnswerOptionDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+
     }
 }

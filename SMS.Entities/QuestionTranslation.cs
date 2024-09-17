@@ -16,8 +16,6 @@ namespace SMS.Entities
 
         public Question Question { get; set; }
         public Language Language { get; set; }
-        public string QuestionTranslationDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+
     }
 }
