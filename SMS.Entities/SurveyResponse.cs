@@ -17,5 +17,8 @@ namespace SMS.Entities
         public SurveyInstance SurveyInstance { get; set; }
         public Respondent Respondent { get; set; }
         public ICollection<SurveyResponseDetail> SurveyResponseDetails { get; set; }
+        public string SurveyResponseDescription { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public bool IsActive { get; set; }
     }
 }

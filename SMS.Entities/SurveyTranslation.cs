@@ -17,5 +17,8 @@ namespace SMS.Entities
 
         public Survey Survey { get; set; }
         public Language Language { get; set; }
+        public string SurveyTranslationDescription { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public bool IsActive { get; set; }
     }
 }

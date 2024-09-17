@@ -15,8 +15,6 @@ namespace RepositoryContracts.DTOs
         public bool IsActive { get; set; }
     }
 
-
-
     public static class SurveyExtention
     {
         public static SurveyResponseDto ToSurveResponseDto(this Survey survey)

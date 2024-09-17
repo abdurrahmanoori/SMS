@@ -11,8 +11,9 @@ namespace SMS.Entities
         public int AnswerOptionID { get; set; }
         public int QuestionID { get; set; }
         public ICollection<AnswerOptionTranslation> Translations { get; set; }
-
         public Question Question { get; set; }
+        public string AnswerOptionDescription { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public bool IsActive { get; set; }
     }
-
 }

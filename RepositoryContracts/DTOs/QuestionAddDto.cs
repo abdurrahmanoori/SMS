@@ -1,18 +1,18 @@
-﻿using SMS.Entities;
+﻿using SMS.Entities; 
 
 namespace RepositoryContracts.DTOs
 {
-    public class SurveyAddDto
+    public class QuestionAddDto
     {
-        public string SurveyDescription { get; set; }
+        public string QuestionDescription { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool IsActive { get; set; }
 
-        public Survey ToSurvey()
+        public Question ToQuestion()
         {
-            return new Survey
+            return new Question
             {
-                SurveyDescription = SurveyDescription,
+                QuestionDescription = QuestionDescription,
                 CreatedDate = CreatedDate,
                 IsActive = IsActive
             };

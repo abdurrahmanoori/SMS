@@ -2,17 +2,17 @@
 
 namespace RepositoryContracts.DTOs
 {
-    public class SurveyAddDto
+    public class SurveyInstanceAddDto
     {
-        public string SurveyDescription { get; set; }
+        public string SurveyInstanceDescription { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool IsActive { get; set; }
 
-        public Survey ToSurvey()
+        public SurveyInstance ToSurveyInstance()
         {
-            return new Survey
+            return new SurveyInstance
             {
-                SurveyDescription = SurveyDescription,
+                SurveyInstanceDescription = SurveyInstanceDescription,
                 CreatedDate = CreatedDate,
                 IsActive = IsActive
             };
