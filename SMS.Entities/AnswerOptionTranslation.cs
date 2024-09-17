@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace SMS.Entities
 {
-
     public class AnswerOptionTranslation
     {
         public int AnswerOptionTranslationID { get; set; }
@@ -16,5 +15,8 @@ namespace SMS.Entities
 
         public AnswerOption AnswerOption { get; set; }
         public Language Language { get; set; }
+        public string AnswerOptionTranslationDescription { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public bool IsActive { get; set; }
     }
 }
