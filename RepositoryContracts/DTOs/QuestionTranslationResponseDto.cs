@@ -10,9 +10,9 @@ namespace RepositoryContracts.DTOs
     public class QuestionTranslationResponseDto
     {
         public int QuestionTranslationID { get; set; }
-        public string QuestionDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+        public int QuestionID { get; set; }
+        public int LanguageID { get; set; }  // Foreign key to Language
+        public string QuestionText { get; set; }
     }
 
     public static class QuestionTranslationExtention
@@ -21,10 +21,11 @@ namespace RepositoryContracts.DTOs
         {
             return new QuestionTranslationResponseDto
             {
-                QuestionTranslationID = questiontranslation.QuestionTranslationID,
-                QuestionDescription = questiontranslation.QuestionTranslationDescription,
-                CreatedDate = questiontranslation.CreatedDate,
-                IsActive = questiontranslation.IsActive
+             LanguageID= questiontranslation.LanguageID,
+             QuestionText= questiontranslation.QuestionText,
+             QuestionID= questiontranslation.QuestionID,
+             QuestionTranslationID= questiontranslation.QuestionTranslationID
+
             };
         }
     }

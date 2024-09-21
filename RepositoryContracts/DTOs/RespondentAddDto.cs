@@ -4,17 +4,18 @@ namespace RepositoryContracts.DTOs
 {
     public class RespondentAddDto
     {
-        public string RespondentDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Province { get; set; }  // Example: "Kabul", "Tehran", etc.
+
 
         public Respondent ToRespondent()
         {
             return new Respondent
             {
-                RespondentDescription = RespondentDescription,
-                CreatedDate = CreatedDate,
-                IsActive = IsActive,
+               Email = Email,
+               Name = Name,
+               Province = Province,
             };
         }
     }

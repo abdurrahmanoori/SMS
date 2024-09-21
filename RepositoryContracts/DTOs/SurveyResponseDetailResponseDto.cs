@@ -1,18 +1,14 @@
 ﻿using SMS.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RepositoryContracts.DTOs
 {
     public class SurveyResponseDetailResponseDto
     {
         public int SurveyResponseDetailID { get; set; }
-        public string SurveyResponseDetailDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+        public int SurveyResponseID { get; set; }
+        public int SurveyInstanceQuestionID { get; set; }
+        public int? AnswerOptionID { get; set; }  // For multiple choice or single choice questions
+        public string FreeTextAnswer { get; set; }  // For open-ended questions
+
     }
 
     public static class SurveyResponseDetailExtention
@@ -21,10 +17,12 @@ namespace RepositoryContracts.DTOs
         {
             return new SurveyResponseDetailResponseDto
             {
+                AnswerOptionID = surveyresponsedetail.AnswerOptionID,
+                FreeTextAnswer = surveyresponsedetail.FreeTextAnswer,
+                SurveyInstanceQuestionID = surveyresponsedetail.SurveyInstanceQuestionID,
                 SurveyResponseDetailID = surveyresponsedetail.SurveyResponseDetailID,
-                SurveyResponseDetailDescription = surveyresponsedetail.SurveyResponseDetailDescription,
-                CreatedDate = surveyresponsedetail.CreatedDate,
-                IsActive = surveyresponsedetail.IsActive,
+                SurveyResponseID = surveyresponsedetail.SurveyResponseID
+
             };
         }
     }
