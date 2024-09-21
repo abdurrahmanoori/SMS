@@ -1,5 +1,4 @@
-﻿
-namespace SMS.Entities
+﻿namespace SMS.Entities
 {
 
 

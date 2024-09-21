@@ -3,7 +3,8 @@
 
     public class Language
     {
-        public int LanguageID { get; set; }     
+        public int LanguageID { get; set; }
+
 
         public string? LanguageCode { get; set; }  // e.g., "en", "fa", "ur"
         public string LanguageName { get; set; }
