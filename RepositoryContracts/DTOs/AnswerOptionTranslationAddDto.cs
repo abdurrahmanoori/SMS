@@ -4,17 +4,17 @@ namespace RepositoryContracts.DTOs
 {
     public class AnswerOptionTranslationAddDto
     {
-        public string AnswerOptionTranslationDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
-
+        public int AnswerOptionID { get; set; }
+        public int LanguageID { get; set; }  // Foreign key to Language
+        //This about this.
+        public string AnswerOptionText { get; set; }
         public AnswerOptionTranslation ToAnswerOptionTranslation()
         {
             return new AnswerOptionTranslation
             {
-                AnswerOptionTranslationDescription = AnswerOptionTranslationDescription,
-                CreatedDate = CreatedDate,
-                IsActive = IsActive
+                AnswerOptionID = AnswerOptionID,
+                LanguageID = LanguageID, 
+                AnswerOptionText = AnswerOptionText,
             };
         }
     }

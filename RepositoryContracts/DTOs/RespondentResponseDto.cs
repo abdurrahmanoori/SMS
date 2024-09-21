@@ -10,9 +10,10 @@ namespace RepositoryContracts.DTOs
     public class RespondentResponseDto
     {
         public int RespondentID { get; set; }
-        public string RespondentDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Province { get; set; }  // Example: "Kabul", "Tehran", etc.
+
     }
 
     public static class RespondentExtention
@@ -21,10 +22,11 @@ namespace RepositoryContracts.DTOs
         {
             return new RespondentResponseDto
             {
-                RespondentID = respondent.RespondentID,
-                RespondentDescription = respondent.RespondentDescription,
-                CreatedDate = respondent.CreatedDate,
-                IsActive = respondent.IsActive
+              Email = respondent.Email,
+              Name = respondent.Name,
+              Province = respondent.Province,
+              RespondentID = respondent.RespondentID
+
             };
         }
     }

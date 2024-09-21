@@ -10,9 +10,8 @@ namespace RepositoryContracts.DTOs
     public class SurveyInstanceQuestionResponseDto
     {
         public int SurveyInstanceQuestionID { get; set; }
-        public string SurveyInstanceQuestionDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+        public int SurveyInstanceID { get; set; }
+        public int QuestionID { get; set; }
     }
 
     public static class SurveyInstanceQuestionExtention
@@ -21,10 +20,10 @@ namespace RepositoryContracts.DTOs
         {
             return new SurveyInstanceQuestionResponseDto
             {
-                SurveyInstanceQuestionID = surveyinstancequestion.SurveyInstanceQuestionID,
-                SurveyInstanceQuestionDescription = surveyinstancequestion.SurveyInstanceQuestionDescription,
-                CreatedDate = surveyinstancequestion.CreatedDate,
-                IsActive = surveyinstancequestion.IsActive
+               QuestionID = surveyinstancequestion.QuestionID,
+               SurveyInstanceID = surveyinstancequestion.SurveyInstanceID,
+               SurveyInstanceQuestionID = surveyinstancequestion.SurveyInstanceQuestionID
+
             };
         }
     }

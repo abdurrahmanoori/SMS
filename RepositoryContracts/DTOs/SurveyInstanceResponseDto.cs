@@ -1,17 +1,12 @@
 ﻿using SMS.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RepositoryContracts.DTOs
 {
     public class SurveyInstanceResponseDto
     {
         public int SurveyInstanceID { get; set; }
-        public string SurveyInstanceDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public int SurveyID { get; set; }
+        public DateTime ActivationDate { get; set; }
+        public DateTime? DeactivationDate { get; set; }
         public bool IsActive { get; set; }
     }
 
@@ -21,10 +16,11 @@ namespace RepositoryContracts.DTOs
         {
             return new SurveyInstanceResponseDto
             {
-                SurveyInstanceID = surveyinstance.SurveyInstanceID,
-                SurveyInstanceDescription = surveyinstance.SurveyInstanceDescription,
-                CreatedDate = surveyinstance.CreatedDate,
-                IsActive = surveyinstance.IsActive
+               DeactivationDate = surveyinstance.ActivationDate,
+               SurveyID = surveyinstance.SurveyID,
+               ActivationDate = surveyinstance.ActivationDate,
+               IsActive = surveyinstance.IsActive
+
             };
         }
     }

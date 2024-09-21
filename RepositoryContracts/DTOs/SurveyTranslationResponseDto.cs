@@ -1,18 +1,15 @@
 ﻿using SMS.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RepositoryContracts.DTOs
 {
     public class SurveyTranslationResponseDto
     {
         public int SurveyTranslationID { get; set; }
-        public string SurveyTranslationDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+        public int SurveyID { get; set; }
+        public int LanguageID { get; set; }  // Foreign key to Language
+        public string Title { get; set; }
+        public string Description { get; set; }
+
     }
 
     public static class SurveyTranslationExtention
@@ -21,10 +18,12 @@ namespace RepositoryContracts.DTOs
         {
             return new SurveyTranslationResponseDto
             {
-                SurveyTranslationID = surveyranslation.SurveyTranslationID,
-                SurveyTranslationDescription = surveyranslation.SurveyTranslationDescription,
-                CreatedDate = surveyranslation.CreatedDate,
-                IsActive = surveyranslation.IsActive,
+              LanguageID = surveyranslation.LanguageID,
+              Title = surveyranslation.Title,
+              Description = surveyranslation.Description,
+              SurveyTranslationID = surveyranslation.SurveyTranslationID,
+              SurveyID= surveyranslation.SurveyID
+
             };
         }
     }

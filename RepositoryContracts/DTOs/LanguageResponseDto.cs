@@ -6,6 +6,7 @@ namespace RepositoryContracts.DTOs
     {
         public int LanguageID { get; set; }
 
+        public string? LanguageCode { get; set; }  // e.g., "en", "fa", "ur"
         public string LanguageName { get; set; }
 
 
@@ -20,7 +21,8 @@ namespace RepositoryContracts.DTOs
             {
                 LanguageID = language.LanguageID,
                 
-                LanguageName = language.LanguageName
+                LanguageName = language.LanguageName,
+                LanguageCode = language.LanguageCode
                 
             };
         }

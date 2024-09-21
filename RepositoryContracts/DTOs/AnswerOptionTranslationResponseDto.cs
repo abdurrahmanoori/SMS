@@ -1,18 +1,14 @@
 ﻿using SMS.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RepositoryContracts.DTOs
 {
     public class AnswerOptionTranslationResponseDto
     {
         public int AnswerOptionTranslationID { get; set; }
-        public string AnswerOptionTranslationDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public bool IsActive { get; set; }
+        public int AnswerOptionID { get; set; }
+        public int LanguageID { get; set; }  // Foreign key to Language
+        //This about this.
+        public string AnswerOptionText { get; set; }
     }
 
     public static class AnswerOptionTranslationExtention
@@ -22,9 +18,10 @@ namespace RepositoryContracts.DTOs
             return new AnswerOptionTranslationResponseDto
             {
                 AnswerOptionTranslationID = answeroptiontranslation.AnswerOptionTranslationID,
-                AnswerOptionTranslationDescription = answeroptiontranslation.AnswerOptionTranslationDescription,
-                CreatedDate = answeroptiontranslation.CreatedDate,
-                IsActive = answeroptiontranslation.IsActive
+                AnswerOptionID = answeroptiontranslation.AnswerOptionID,
+                 AnswerOptionText = answeroptiontranslation.AnswerOptionText,
+                 LanguageID = answeroptiontranslation.LanguageID
+             
             };
         }
     }
