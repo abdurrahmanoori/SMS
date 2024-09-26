@@ -21,6 +21,7 @@ namespace RepositoryContracts.Generic
         ISurveyInstanceQuestionRepository SurveyInstanceQuestionRepository { get; }
         ISurveyResponseRepository SurveyResponseRepository { get; }
         ISurveyResponseDetailRepository SurveyResponseDetailRepository { get; }
+        IEducationalDegreeRepository EducationalDegreeRepository { get; }
 
         Task SaveChanges(CancellationToken cancellationToken);
 
