@@ -19,8 +19,6 @@ namespace Entities.Data
 
         }
 
-
-
         public DbSet<Survey> Surveys { get; set; }
         public DbSet<SurveyInstance> SurveyInstances { get; set; }
         public DbSet<SurveyInstanceQuestion> SurveyInstanceQuestions { get; set; }
