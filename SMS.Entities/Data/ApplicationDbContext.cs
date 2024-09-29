@@ -12,7 +12,12 @@ namespace Entities.Data
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
+
+        }
 
         public DbSet<Survey> Surveys { get; set; }
         public DbSet<SurveyInstance> SurveyInstances { get; set; }
