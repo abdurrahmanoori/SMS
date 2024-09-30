@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using SMS.Entities;
+using SMS.Entities.DatabaseSeeders;
 
 namespace Entities.Data
 {
@@ -16,7 +17,7 @@ namespace Entities.Data
         {
             base.OnModelCreating(modelBuilder);
 
-
+            SurveySeed.DataSeed(modelBuilder);
         }
 
         public DbSet<Survey> Surveys { get; set; }

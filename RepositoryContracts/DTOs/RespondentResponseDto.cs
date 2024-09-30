@@ -1,18 +1,18 @@
 ﻿using SMS.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RepositoryContracts.DTOs
 {
     public class RespondentResponseDto
     {
-        public int RespondentID { get; set; }
-        public string Name { get; set; }
+        public int RespondentId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Gender { get; set; }
         public string Email { get; set; }
-        public string Province { get; set; }  // Example: "Kabul", "Tehran", etc.
+        public string PhoneNumber { get; set; }
+        public int DateOfBirth { get; set; }
+        public string Province { get; set; }
+        public string EducationLevel { get; set; }
 
     }
 
@@ -22,10 +22,15 @@ namespace RepositoryContracts.DTOs
         {
             return new RespondentResponseDto
             {
-              Email = respondent.Email,
-              Name = respondent.Name,
-              Province = respondent.Province,
-              RespondentID = respondent.RespondentID
+                RespondentId = respondent.RespondentID,
+                FirstName = respondent.FirstName,
+                LastName = respondent.LastName,
+                Gender = respondent.Gender,
+                Email = respondent.Email,
+                PhoneNumber = respondent.PhoneNumber,
+                DateOfBirth = respondent.DateOfBirth,
+                Province = respondent.Province,
+                EducationLevel = respondent.EducationLevel
 
             };
         }
