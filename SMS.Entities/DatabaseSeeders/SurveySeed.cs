@@ -39,7 +39,7 @@ namespace SMS.Entities.DatabaseSeeders
             },
             new Survey
             {
-                SurveyID = 1,
+                SurveyID = 5,
                 SurveyDescription = "Customer Satisfaction Survey",
                 CreatedDate = new DateTime(2024, 9, 1), // Sets the date to October 1, 2023
                 IsActive = true
