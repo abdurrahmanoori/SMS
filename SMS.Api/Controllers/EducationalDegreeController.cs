@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using RepositoryContracts;
 using RepositoryContracts.DTOs;
 using RepositoryContracts.Generic;
 using SMS.Entities;
@@ -26,9 +27,9 @@ namespace SMS.Api.Controllers
         {
             IEnumerable<EducationalDegree> educationaldegrees = await _unitOfWork.EducationalDegreeRepository.GetAll();
 
-            IEnumerable<EducationalDegreeResponseDto> results = educationaldegrees.Select(temp => temp.ToEducationalDegreeResponseDto());
+            //IEnumerable<EducationalDegreeResponseDto> results = educationaldegrees.Select(temp => temp.ToEducationalDegreeResponseDto());
 
-            return Ok(results);
+            return Ok();
 
         }
 
@@ -43,9 +44,9 @@ namespace SMS.Api.Controllers
             {
                 return NotFound("There is no educationaldegree by this Id.");
             }
-            EducationalDegreeResponseDto educationaldegreeResponseDto = educationaldegree.ToEducationalDegreeResponseDto();
+            //EducationalDegreeResponseDto educationaldegreeResponseDto = educationaldegree.ToEducationalDegreeResponseDto();
 
-            return Ok(educationaldegreeResponseDto);
+            return Ok();
 
 
         }
@@ -75,6 +76,7 @@ namespace SMS.Api.Controllers
             var educationaldegree = await _unitOfWork.EducationalDegreeRepository.GetFirstOrDefault(x => x.EducationalDegreeID == educationaldegreeId);
             if (educationaldegree is null)
             {
+                // this is test commit
                 return BadRequest();
             }
             await _unitOfWork.EducationalDegreeRepository.Remove(educationaldegree);
