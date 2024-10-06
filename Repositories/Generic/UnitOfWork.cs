@@ -32,7 +32,7 @@ namespace Repositories.Generic
             SurveyResponseRepository = new SurveyResponseRepository(db);
             SurveyResponseDetailRepository = new SurveyResponseDetailRepository(db);
             EducationalDegreeRepository = new EducationalDegreeRepository(db);
-
+            provincesRepository = new ProvinceRepository(db);
             // ProvinceRepository = new ProvinceRepository(db);
         }
 
@@ -49,7 +49,9 @@ namespace Repositories.Generic
         public ISurveyResponseRepository SurveyResponseRepository { get; private set; }
         public ISurveyResponseDetailRepository SurveyResponseDetailRepository { get; private set; }
         public IEducationalDegreeRepository EducationalDegreeRepository { get; private set; }
-       
+   
+        public IProvinceRepository provincesRepository { get; private set; }
+
         public async Task SaveChanges(CancellationToken cancellationToken)
         {
             await _db.SaveChangesAsync(cancellationToken);

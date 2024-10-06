@@ -36,7 +36,7 @@ namespace Entities.Data
 
         public DbSet<SurveyResponseDetail> SurveyResponseDetails { get; set; }
         public DbSet<SurveyTranslation> SurveyTranslations { get; set; }
-
+        public DbSet<Province> Provinces { get; set; }
 
     }
 }

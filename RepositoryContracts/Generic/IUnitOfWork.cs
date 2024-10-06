@@ -22,7 +22,7 @@ namespace RepositoryContracts.Generic
         ISurveyResponseRepository SurveyResponseRepository { get; }
         ISurveyResponseDetailRepository SurveyResponseDetailRepository { get; }
         IEducationalDegreeRepository EducationalDegreeRepository { get; }
-
+        IProvinceRepository provincesRepository { get; }
         Task SaveChanges(CancellationToken cancellationToken);
 
     }
