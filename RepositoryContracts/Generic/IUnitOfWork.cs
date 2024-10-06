@@ -22,7 +22,8 @@ namespace RepositoryContracts.Generic
         ISurveyResponseRepository SurveyResponseRepository { get; }
         ISurveyResponseDetailRepository SurveyResponseDetailRepository { get; }
         IEducationalDegreeRepository EducationalDegreeRepository { get; }
-        IProvinceRepository provincesRepository { get; }
+        IProvinceRepository ProvincesRepository { get; }
+        IDistrictRepository DistrictRepository { get; }
         Task SaveChanges(CancellationToken cancellationToken);
 
     }

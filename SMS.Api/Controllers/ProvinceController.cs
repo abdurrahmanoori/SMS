@@ -19,13 +19,13 @@ namespace SMS.Api.Controllers
         [HttpGet("api/province/getAll")]
         public async Task<IActionResult> GetProvinceList()
         {
-            IEnumerable<Province> provinces= await _unitOfWork.provincesRepository.GetAll();
+            IEnumerable<Province> provinces= await _unitOfWork.ProvincesRepository.GetAll();
             IEnumerable<ProvinceResponseDto> result = provinces.Select(temp => temp.toProvinceResponseDto());
             return Ok(result);
         }
         [HttpGet("api/province/GetById")]
         public async Task<IActionResult> GetByID(int id) { 
-        var province=await _unitOfWork.provincesRepository.GetFirstOrDefault(x=> x.Id==id);
+        var province=await _unitOfWork.ProvincesRepository.GetFirstOrDefault(x=> x.Id==id);
             if (province == null) {
                 return NotFound("There is no province by this Id.");
             }
@@ -40,7 +40,7 @@ namespace SMS.Api.Controllers
                 return BadRequest();
             }
             Province province=provinceAddDto.toProvince();
-            await _unitOfWork.provincesRepository.Add(province);
+            await _unitOfWork.ProvincesRepository.Add(province);
             await _unitOfWork.SaveChanges(CancellationToken.None);
             return Ok("Province created successfully");
         }
@@ -50,12 +50,12 @@ namespace SMS.Api.Controllers
             {
                 return BadRequest();
             }
-            var province = await _unitOfWork.provincesRepository.GetFirstOrDefault(x=>x.Id==id);
+            var province = await _unitOfWork.ProvincesRepository.GetFirstOrDefault(x=>x.Id==id);
             if (province is null)
             {
                 return BadRequest();
             }
-            await _unitOfWork.provincesRepository.Remove(province);
+            await _unitOfWork.ProvincesRepository.Remove(province);
             await _unitOfWork.SaveChanges(CancellationToken.None);
             return Ok("Province Has been deleted!");
 
