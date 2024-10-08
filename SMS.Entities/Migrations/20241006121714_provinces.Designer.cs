@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SMS.Entities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241006121714_provinces")]
+    partial class provinces
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
@@ -56,26 +58,6 @@ namespace SMS.Entities.Migrations
                     b.HasIndex("LanguageID");
 
                     b.ToTable("AnswersOptionsTranslation");
-                });
-
-            modelBuilder.Entity("SMS.Entities.District", b =>
-                {
-                    b.Property<int>("DistrictId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("DistrictName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("ProvinceId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("DistrictId");
-
-                    b.HasIndex("ProvinceId");
-
-                    b.ToTable("Districts");
                 });
 
             modelBuilder.Entity("SMS.Entities.Language", b =>
@@ -381,17 +363,6 @@ namespace SMS.Entities.Migrations
                     b.Navigation("Language");
                 });
 
-            modelBuilder.Entity("SMS.Entities.District", b =>
-                {
-                    b.HasOne("SMS.Entities.Province", "Province")
-                        .WithMany("Districts")
-                        .HasForeignKey("ProvinceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Province");
-                });
-
             modelBuilder.Entity("SMS.Entities.Question", b =>
                 {
                     b.HasOne("SMS.Entities.Survey", "Survey")
@@ -518,11 +489,6 @@ namespace SMS.Entities.Migrations
             modelBuilder.Entity("SMS.Entities.AnswerOption", b =>
                 {
                     b.Navigation("Translations");
-                });
-
-            modelBuilder.Entity("SMS.Entities.Province", b =>
-                {
-                    b.Navigation("Districts");
                 });
 
             modelBuilder.Entity("SMS.Entities.Question", b =>
