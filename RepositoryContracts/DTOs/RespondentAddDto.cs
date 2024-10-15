@@ -14,7 +14,7 @@ namespace RepositoryContracts.DTOs
             return new Respondent
             {
                Email = Email,
-               //Name = Name,
+               Name = Name,
                Province = Province,
             };
         }

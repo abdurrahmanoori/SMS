@@ -6,5 +6,6 @@
         public string EducationalDegreeName { get; set; }
         public string EducationalDegreeDescription { get; set; }
         public DateTime CreatedDate { get; set; }
+
     }
 }

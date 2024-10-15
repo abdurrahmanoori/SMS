@@ -12,5 +12,6 @@
         public int DateOfBirth { get; set; }
         public string Province { get; set; }
         public string EducationLevel { get; set; }
+        public string Name { get; set; }
     }
 }
