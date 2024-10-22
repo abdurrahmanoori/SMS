@@ -45,19 +45,6 @@ namespace SMS.Entities.DatabaseSeeders
                 Province = "British Columbia",
                 EducationLevel = "PhD",
                 Name = "Alice Johnson"
-            },
-            new Respondent
-            {
-                RespondentID = 4,
-                FirstName = "Bob",
-                LastName = "Brown",
-                Gender = "Male",
-                Email = "bob.brown@example.com",
-                PhoneNumber = "555-765-4321",
-                DateOfBirth = 1988, // Consider changing this to a DateTime if appropriate
-                Province = "Alberta",
-                EducationLevel = "Diploma",
-                Name = "Bob Brown"
             });
         }
     }

@@ -28,22 +28,6 @@ namespace SMS.Entities.DatabaseSeeders
                 CreatedDate = new DateTime(2022, 3, 1), // Sets the date to October 1, 2023
                 IsActive = true
 
-            },
-            new Survey
-            {
-                SurveyID = 4,
-                SurveyDescription = "Customer Satisfaction Survey",
-                CreatedDate = new DateTime(2023, 6, 1), // Sets the date to October 1, 2023
-                IsActive = true
-
-            },
-            new Survey
-            {
-                SurveyID = 5,
-                SurveyDescription = "Customer Satisfaction Survey",
-                CreatedDate = new DateTime(2024, 9, 1), // Sets the date to October 1, 2023
-                IsActive = true
-
             });
         }
     }

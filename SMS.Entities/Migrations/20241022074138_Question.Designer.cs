@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SMS.Entities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241022074138_Question")]
+    partial class Question
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
@@ -352,21 +354,21 @@ namespace SMS.Entities.Migrations
                         {
                             SurveyResponseID = 1,
                             RespondentID = 1,
-                            ResponseDate = new DateTime(2024, 10, 22, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5109),
+                            ResponseDate = new DateTime(2024, 10, 22, 7, 41, 37, 391, DateTimeKind.Utc).AddTicks(1563),
                             SurveyInstanceID = 1
                         },
                         new
                         {
                             SurveyResponseID = 2,
                             RespondentID = 2,
-                            ResponseDate = new DateTime(2024, 10, 21, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5111),
+                            ResponseDate = new DateTime(2024, 10, 21, 7, 41, 37, 391, DateTimeKind.Utc).AddTicks(1573),
                             SurveyInstanceID = 2
                         },
                         new
                         {
                             SurveyResponseID = 3,
                             RespondentID = 3,
-                            ResponseDate = new DateTime(2024, 10, 20, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5114),
+                            ResponseDate = new DateTime(2024, 10, 20, 7, 41, 37, 391, DateTimeKind.Utc).AddTicks(1580),
                             SurveyInstanceID = 3
                         });
                 });

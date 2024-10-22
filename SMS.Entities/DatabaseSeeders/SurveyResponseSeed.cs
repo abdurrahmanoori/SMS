@@ -17,14 +17,14 @@ namespace SMS.Entities.DatabaseSeeders
             new SurveyResponse
             {
                 SurveyResponseID = 2,
-                SurveyInstanceID = 1,
+                SurveyInstanceID = 2,
                 RespondentID = 2,
                 ResponseDate = DateTime.UtcNow.AddDays(-1)
             },
             new SurveyResponse
             {
                 SurveyResponseID = 3,
-                SurveyInstanceID = 2,
+                SurveyInstanceID = 3,
                 RespondentID = 3,
                 ResponseDate = DateTime.UtcNow.AddDays(-2)
             });

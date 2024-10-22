@@ -13,23 +13,25 @@ namespace SMS.Entities.DatabaseSeeders
                 SurveyResponseID = 1,
                 SurveyInstanceQuestionID = 1,
                 AnswerOptionID = 1,
-                FreeTextAnswer = null // Assuming this is a multiple-choice question
+                FreeTextAnswer = "I believe online learning offers flexibility and accessibility, but it can lack the personal interaction and engagement found in traditional classrooms."
+
             },
             new SurveyResponseDetail
             {
                 SurveyResponseDetailID = 2,
-                SurveyResponseID = 1,
+                SurveyResponseID = 2,
                 SurveyInstanceQuestionID = 2,
-                AnswerOptionID = null, // Assuming this is an open-ended question
-                FreeTextAnswer = "This is my answer to the open-ended question."
+                AnswerOptionID = 2,
+                FreeTextAnswer = "I am passionate about sustainable practices and believe this company aligns with my values and career goals."
+
             },
             new SurveyResponseDetail
             {
                 SurveyResponseDetailID = 3,
-                SurveyResponseID = 2,
-                SurveyInstanceQuestionID = 1,
-                AnswerOptionID = 2,
-                FreeTextAnswer = null // Another multiple-choice answer
+                SurveyResponseID = 3,
+                SurveyInstanceQuestionID = 3,
+                AnswerOptionID = 3,
+                FreeTextAnswer = "Traveling abroad taught me about different cultures and perspectives, which greatly expanded my worldview."
             });
         }
     }

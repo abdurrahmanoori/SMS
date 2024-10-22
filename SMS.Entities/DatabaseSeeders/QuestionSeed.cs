@@ -11,50 +11,22 @@ namespace SMS.Entities.DatabaseSeeders
             new Question
             {
                 QuestionID = 1,
-                SurveyID = 101,
+                SurveyID = 1,
                 QuestionType = "MultipleChoice",
                 IsRequired = true
             },
             new Question
             {
                 QuestionID = 2,
-                SurveyID = 101,
+                SurveyID = 2,
                 QuestionType = "MultipleChoice",
                 IsRequired = false
             },
             new Question
             {
                 QuestionID = 3,
-                SurveyID = 102,
+                SurveyID = 3,
                 QuestionType = "Rating",
-                IsRequired = true
-            },
-            new Question
-            {
-                QuestionID = 4,
-                SurveyID = 103,
-                QuestionType = "Text",
-                IsRequired = true
-            },
-            new Question
-            {
-                QuestionID = 5,
-                SurveyID = 103,
-                QuestionType = "Text",
-                IsRequired = false
-            },
-            new Question
-            {
-                QuestionID = 6,
-                SurveyID = 104,
-                QuestionType = "YesNo",
-                IsRequired = true
-            },
-            new Question
-            {
-                QuestionID = 7,
-                SurveyID = 105,
-                QuestionType = "MultipleChoice",
                 IsRequired = true
             });
         }
