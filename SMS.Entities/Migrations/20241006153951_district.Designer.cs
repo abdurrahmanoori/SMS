@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SMS.Entities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241006153951_district")]
+    partial class district
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
@@ -132,29 +134,6 @@ namespace SMS.Entities.Migrations
                     b.HasIndex("SurveyID");
 
                     b.ToTable("Questions");
-
-                    b.HasData(
-                        new
-                        {
-                            QuestionID = 1,
-                            IsRequired = true,
-                            QuestionType = "MultipleChoice",
-                            SurveyID = 1
-                        },
-                        new
-                        {
-                            QuestionID = 2,
-                            IsRequired = false,
-                            QuestionType = "MultipleChoice",
-                            SurveyID = 2
-                        },
-                        new
-                        {
-                            QuestionID = 3,
-                            IsRequired = true,
-                            QuestionType = "Rating",
-                            SurveyID = 3
-                        });
                 });
 
             modelBuilder.Entity("SMS.Entities.QuestionTranslation", b =>
@@ -211,14 +190,6 @@ namespace SMS.Entities.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-<<<<<<< HEAD
-                    b.Property<string>("Name")
-=======
-                    b.Property<string>("PhoneNumber")
->>>>>>> b3b2212948c6a17541557afab0b76114cc553c1e
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -230,47 +201,6 @@ namespace SMS.Entities.Migrations
                     b.HasKey("RespondentID");
 
                     b.ToTable("Responsdent");
-
-                    b.HasData(
-                        new
-                        {
-                            RespondentID = 1,
-                            DateOfBirth = 1990,
-                            EducationLevel = "Bachelor's",
-                            Email = "john.doe@example.com",
-                            FirstName = "John",
-                            Gender = "Male",
-                            LastName = "Doe",
-                            Name = "John Doe",
-                            PhoneNumber = "123-456-7890",
-                            Province = "Ontario"
-                        },
-                        new
-                        {
-                            RespondentID = 2,
-                            DateOfBirth = 1985,
-                            EducationLevel = "Master's",
-                            Email = "jane.smith@example.com",
-                            FirstName = "Jane",
-                            Gender = "Female",
-                            LastName = "Smith",
-                            Name = "Jane Smith",
-                            PhoneNumber = "098-765-4321",
-                            Province = "Quebec"
-                        },
-                        new
-                        {
-                            RespondentID = 3,
-                            DateOfBirth = 1992,
-                            EducationLevel = "PhD",
-                            Email = "alice.johnson@example.com",
-                            FirstName = "Alice",
-                            Gender = "Female",
-                            LastName = "Johnson",
-                            Name = "Alice Johnson",
-                            PhoneNumber = "555-123-4567",
-                            Province = "British Columbia"
-                        });
                 });
 
             modelBuilder.Entity("SMS.Entities.Survey", b =>
@@ -292,29 +222,6 @@ namespace SMS.Entities.Migrations
                     b.HasKey("SurveyID");
 
                     b.ToTable("Surveys");
-
-                    b.HasData(
-                        new
-                        {
-                            SurveyID = 1,
-                            CreatedDate = new DateTime(2021, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
-                            SurveyDescription = "Customer Satisfaction Survey"
-                        },
-                        new
-                        {
-                            SurveyID = 2,
-                            CreatedDate = new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
-                            SurveyDescription = "Customer Satisfaction Survey"
-                        },
-                        new
-                        {
-                            SurveyID = 3,
-                            CreatedDate = new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
-                            SurveyDescription = "Customer Satisfaction Survey"
-                        });
                 });
 
             modelBuilder.Entity("SMS.Entities.SurveyInstance", b =>
@@ -385,29 +292,6 @@ namespace SMS.Entities.Migrations
                     b.HasIndex("SurveyInstanceID");
 
                     b.ToTable("SurveyResponse");
-
-                    b.HasData(
-                        new
-                        {
-                            SurveyResponseID = 1,
-                            RespondentID = 1,
-                            ResponseDate = new DateTime(2024, 10, 22, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5109),
-                            SurveyInstanceID = 1
-                        },
-                        new
-                        {
-                            SurveyResponseID = 2,
-                            RespondentID = 2,
-                            ResponseDate = new DateTime(2024, 10, 21, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5111),
-                            SurveyInstanceID = 2
-                        },
-                        new
-                        {
-                            SurveyResponseID = 3,
-                            RespondentID = 3,
-                            ResponseDate = new DateTime(2024, 10, 20, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5114),
-                            SurveyInstanceID = 3
-                        });
                 });
 
             modelBuilder.Entity("SMS.Entities.SurveyResponseDetail", b =>
@@ -438,32 +322,6 @@ namespace SMS.Entities.Migrations
                     b.HasIndex("SurveyResponseID");
 
                     b.ToTable("SurveyResponseDetails");
-
-                    b.HasData(
-                        new
-                        {
-                            SurveyResponseDetailID = 1,
-                            AnswerOptionID = 1,
-                            FreeTextAnswer = "I believe online learning offers flexibility and accessibility, but it can lack the personal interaction and engagement found in traditional classrooms.",
-                            SurveyInstanceQuestionID = 1,
-                            SurveyResponseID = 1
-                        },
-                        new
-                        {
-                            SurveyResponseDetailID = 2,
-                            AnswerOptionID = 2,
-                            FreeTextAnswer = "I am passionate about sustainable practices and believe this company aligns with my values and career goals.",
-                            SurveyInstanceQuestionID = 2,
-                            SurveyResponseID = 2
-                        },
-                        new
-                        {
-                            SurveyResponseDetailID = 3,
-                            AnswerOptionID = 3,
-                            FreeTextAnswer = "Traveling abroad taught me about different cultures and perspectives, which greatly expanded my worldview.",
-                            SurveyInstanceQuestionID = 3,
-                            SurveyResponseID = 3
-                        });
                 });
 
             modelBuilder.Entity("SMS.Entities.SurveyTranslation", b =>
