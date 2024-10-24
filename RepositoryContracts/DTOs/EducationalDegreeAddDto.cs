@@ -1,6 +1,6 @@
 ﻿using SMS.Entities;
 
-namespace RepositoryContracts
+namespace RepositoryContracts.DTOs
 {
     public class EducationalDegreeAddDto
     {

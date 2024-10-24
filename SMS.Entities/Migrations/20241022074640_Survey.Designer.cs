@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SMS.Entities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241022074640_Survey")]
+    partial class Survey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
@@ -58,26 +60,6 @@ namespace SMS.Entities.Migrations
                     b.ToTable("AnswersOptionsTranslation");
                 });
 
-            modelBuilder.Entity("SMS.Entities.District", b =>
-                {
-                    b.Property<int>("DistrictId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("DistrictName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("ProvinceId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("DistrictId");
-
-                    b.HasIndex("ProvinceId");
-
-                    b.ToTable("Districts");
-                });
-
             modelBuilder.Entity("SMS.Entities.Language", b =>
                 {
                     b.Property<int>("LanguageID")
@@ -94,21 +76,6 @@ namespace SMS.Entities.Migrations
                     b.HasKey("LanguageID");
 
                     b.ToTable("Languages");
-                });
-
-            modelBuilder.Entity("SMS.Entities.Province", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Provinces");
                 });
 
             modelBuilder.Entity("SMS.Entities.Question", b =>
@@ -211,11 +178,7 @@ namespace SMS.Entities.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-<<<<<<< HEAD
                     b.Property<string>("Name")
-=======
-                    b.Property<string>("PhoneNumber")
->>>>>>> b3b2212948c6a17541557afab0b76114cc553c1e
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -525,17 +488,6 @@ namespace SMS.Entities.Migrations
                     b.Navigation("Language");
                 });
 
-            modelBuilder.Entity("SMS.Entities.District", b =>
-                {
-                    b.HasOne("SMS.Entities.Province", "Province")
-                        .WithMany("Districts")
-                        .HasForeignKey("ProvinceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Province");
-                });
-
             modelBuilder.Entity("SMS.Entities.Question", b =>
                 {
                     b.HasOne("SMS.Entities.Survey", "Survey")
@@ -662,11 +614,6 @@ namespace SMS.Entities.Migrations
             modelBuilder.Entity("SMS.Entities.AnswerOption", b =>
                 {
                     b.Navigation("Translations");
-                });
-
-            modelBuilder.Entity("SMS.Entities.Province", b =>
-                {
-                    b.Navigation("Districts");
                 });
 
             modelBuilder.Entity("SMS.Entities.Question", b =>

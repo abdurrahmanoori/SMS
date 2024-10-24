@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace SMS.Entities.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241022074537_SurveyResponse")]
+    partial class SurveyResponse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
@@ -58,26 +60,6 @@ namespace SMS.Entities.Migrations
                     b.ToTable("AnswersOptionsTranslation");
                 });
 
-            modelBuilder.Entity("SMS.Entities.District", b =>
-                {
-                    b.Property<int>("DistrictId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("DistrictName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("ProvinceId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("DistrictId");
-
-                    b.HasIndex("ProvinceId");
-
-                    b.ToTable("Districts");
-                });
-
             modelBuilder.Entity("SMS.Entities.Language", b =>
                 {
                     b.Property<int>("LanguageID")
@@ -94,21 +76,6 @@ namespace SMS.Entities.Migrations
                     b.HasKey("LanguageID");
 
                     b.ToTable("Languages");
-                });
-
-            modelBuilder.Entity("SMS.Entities.Province", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Provinces");
                 });
 
             modelBuilder.Entity("SMS.Entities.Question", b =>
@@ -211,11 +178,7 @@ namespace SMS.Entities.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-<<<<<<< HEAD
                     b.Property<string>("Name")
-=======
-                    b.Property<string>("PhoneNumber")
->>>>>>> b3b2212948c6a17541557afab0b76114cc553c1e
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -391,21 +354,21 @@ namespace SMS.Entities.Migrations
                         {
                             SurveyResponseID = 1,
                             RespondentID = 1,
-                            ResponseDate = new DateTime(2024, 10, 22, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5109),
+                            ResponseDate = new DateTime(2024, 10, 22, 7, 45, 36, 831, DateTimeKind.Utc).AddTicks(7138),
                             SurveyInstanceID = 1
                         },
                         new
                         {
                             SurveyResponseID = 2,
                             RespondentID = 2,
-                            ResponseDate = new DateTime(2024, 10, 21, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5111),
+                            ResponseDate = new DateTime(2024, 10, 21, 7, 45, 36, 831, DateTimeKind.Utc).AddTicks(7141),
                             SurveyInstanceID = 2
                         },
                         new
                         {
                             SurveyResponseID = 3,
                             RespondentID = 3,
-                            ResponseDate = new DateTime(2024, 10, 20, 7, 46, 40, 266, DateTimeKind.Utc).AddTicks(5114),
+                            ResponseDate = new DateTime(2024, 10, 20, 7, 45, 36, 831, DateTimeKind.Utc).AddTicks(7152),
                             SurveyInstanceID = 3
                         });
                 });
@@ -523,17 +486,6 @@ namespace SMS.Entities.Migrations
                     b.Navigation("AnswerOption");
 
                     b.Navigation("Language");
-                });
-
-            modelBuilder.Entity("SMS.Entities.District", b =>
-                {
-                    b.HasOne("SMS.Entities.Province", "Province")
-                        .WithMany("Districts")
-                        .HasForeignKey("ProvinceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Province");
                 });
 
             modelBuilder.Entity("SMS.Entities.Question", b =>
@@ -662,11 +614,6 @@ namespace SMS.Entities.Migrations
             modelBuilder.Entity("SMS.Entities.AnswerOption", b =>
                 {
                     b.Navigation("Translations");
-                });
-
-            modelBuilder.Entity("SMS.Entities.Province", b =>
-                {
-                    b.Navigation("Districts");
                 });
 
             modelBuilder.Entity("SMS.Entities.Question", b =>

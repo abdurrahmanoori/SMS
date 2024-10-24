@@ -23,7 +23,7 @@ namespace RepositoryContracts.DTOs
             return new RespondentResponseDto
             {
               Email = respondent.Email,
-              //Name = respondent.Name,
+              Name = respondent.Name,
               Province = respondent.Province,
               RespondentID = respondent.RespondentID
 

@@ -27,7 +27,9 @@ namespace SMS.Api.Controllers
         {
             IEnumerable<EducationalDegree> educationaldegrees = await _unitOfWork.EducationalDegreeRepository.GetAll();
 
+
             //IEnumerable<EducationalDegreeResponseDto> results = educationaldegrees.Select(temp => temp.ToEducationalDegreeResponseDto());
+
 
             return Ok();
 
@@ -44,7 +46,11 @@ namespace SMS.Api.Controllers
             {
                 return NotFound("There is no educationaldegree by this Id.");
             }
+
+            EducationalDegreeResponseDto educationaldegreeResponseDto = educationaldegree.ToEducationalDegreeResponse();
+
             //EducationalDegreeResponseDto educationaldegreeResponseDto = educationaldegree.ToEducationalDegreeResponseDto();
+
 
             return Ok();
 
